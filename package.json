@@ -1,0 +1,28 @@
+{
+  "name": "hoistjs",
+  "version": "0.0.1",
+  "description": "A simple Dependency Injection container that is framework agnostic.",
+  "main": "hoist.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "di",
+    "dependency",
+    "injection",
+    "ioc"
+  ],
+  "author": "Donald Jones <donald@birminghamdeveloper.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^2.1.0",
+    "grunt": "^0.4.5",
+    "grunt-ts": "^3.0.0",
+    "karma": "^0.12.31",
+    "karma-mocha": "^0.1.10",
+    "mocha": "^2.1.0"
+  }
+}
