@@ -1,0 +1,10 @@
+bin/
+obj/
+*.sln
+*.csproj
+*.config
+*.js
+*.js.map
+*.csproj.user
+bower_componets/
+node_modules/
