@@ -33,5 +33,15 @@ define(['hoist', 'yourmodule'], function(hoister, yourmodule) {
 - 'STATIC' returns the module itself
 - 'SINGLETON' returns the same instance each pull.
 
+## Build
+```
+grunt make
+```
+
+## Test
+```
+npm test
+```
+
 ## LICENSE
 MIT
