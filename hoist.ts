@@ -7,7 +7,7 @@ class Hoister {
     /**
      * Hash of hoisted class/singletons/statics.
      */
-    hoisted = {};
+    static hoisted = {};
 
     /**
      * Hoist a class/singleton/static to be retrieved in dependent objects later.
@@ -15,7 +15,7 @@ class Hoister {
      * @param {function} construct The object you wish to hoist.
      * @param {string} type The type of object being hoisted.
      */
-    hoist(name: string, construct: any, type: string = 'SINGLETON') {
+    static hoist(name: string, construct: any, type: string = 'SINGLETON') {
         if (!name || name === '') {
             throw new Error('Cannot hoist a constructor with a blank name!');
         }
@@ -54,7 +54,7 @@ class Hoister {
      * Pull an object from the hoisted collection.
      * @param {string} name The name the object was hoisted by.
      */
-    pull(name: string) {
+    static pull(name: string) {
         var hoisted: IHoistable = this.hoisted[name];
 
         if (!hoisted) {

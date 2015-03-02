@@ -6,10 +6,6 @@ define(["require", "exports"], function (require, exports) {
      */
     var Hoister = (function () {
         function Hoister() {
-            /**
-             * Hash of hoisted class/singletons/statics.
-             */
-            this.hoisted = {};
         }
         /**
          * Hoist a class/singleton/static to be retrieved in dependent objects later.
@@ -17,7 +13,7 @@ define(["require", "exports"], function (require, exports) {
          * @param {function} construct The object you wish to hoist.
          * @param {string} type The type of object being hoisted.
          */
-        Hoister.prototype.hoist = function (name, construct, type) {
+        Hoister.hoist = function (name, construct, type) {
             if (type === void 0) { type = 'SINGLETON'; }
             if (!name || name === '') {
                 throw new Error('Cannot hoist a constructor with a blank name!');
@@ -57,7 +53,7 @@ define(["require", "exports"], function (require, exports) {
          * Pull an object from the hoisted collection.
          * @param {string} name The name the object was hoisted by.
          */
-        Hoister.prototype.pull = function (name) {
+        Hoister.pull = function (name) {
             var hoisted = this.hoisted[name];
             if (!hoisted) {
                 throw new Error(name + ' is not hoisted!');
@@ -72,6 +68,10 @@ define(["require", "exports"], function (require, exports) {
                 return new hoisted.construct();
             }
         };
+        /**
+         * Hash of hoisted class/singletons/statics.
+         */
+        Hoister.hoisted = {};
         return Hoister;
     })();
     return Hoister;
