@@ -9,3 +9,4 @@ coverage/
 *.csproj.user
 bower_componets/
 node_modules/
+!dist/*
