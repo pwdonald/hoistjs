@@ -1,7 +1,7 @@
 ﻿define(function (require) {
     describe('HoistJS', function (Hoister) {
-        var Hoister = require('../dist/hoist');
-        var hoister = new Hoister();
+        var hoister = require('../dist/hoist');
+
         describe('Errors', function () {
             it('should fail to hoist an unknown type', function (done) {
                 expect(hoister.hoist.bind(hoister.hoist, 'test123', {}, 'BLAH')).to.throw();
@@ -98,6 +98,24 @@
                 expect(loweredStatic.TestStatic('testonetwo')).to.equal('testonetwoStatic');
                 done();
             });
+        });
+    });
+
+    describe('Singleton Hoister Test', function () {
+        var hoister2 = require('../dist/hoist');
+
+        it('should have test object hoisted', function (done) {
+            // same object hoisted in first test run
+            var lowered = hoister2.pull('test');
+            expect(lowered.count).to.equal(0);
+            done();
+        });
+
+        it('should have singleton object hoisted', function (done) {
+            var loweredSingleton = hoister2.pull('singletonTest');
+            loweredSingleton.count++;
+            expect(loweredSingleton.count).to.equal(2);
+            done();
         });
     });
 });
