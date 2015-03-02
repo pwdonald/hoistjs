@@ -11,3 +11,6 @@ bower_componets/
 node_modules/
 !dist/*
 npm-debug.log
+!karma.conf.js
+!test-main.js
+!test/*
