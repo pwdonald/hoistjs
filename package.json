@@ -1,13 +1,13 @@
 {
-  "name": "hoistjs",
-  "version": "0.0.1",
-  "description": "A simple Dependency Injection container that is framework agnostic.",
-  "main": "hoist.js",
-  "directories": {
-    "test": "test"
-  },
+    "name": "hoistjs",
+    "version": "0.0.1",
+    "description": "A simple AMD Dependency Injection container that is framework agnostic.",
+    "main": "hoist.js",
+    "directories": {
+        "test": "test"
+    },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/karma/bin/karma start"
   },
   "keywords": [
     "di",
