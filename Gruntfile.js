@@ -13,5 +13,5 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-ts');
     grunt.registerTask('default', ['ts']);
-
+    grunt.registerTask('make', ['default']);
 };
