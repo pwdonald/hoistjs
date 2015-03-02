@@ -23,6 +23,8 @@ define(['hoist', 'yourmodule'], function(hoister, yourmodule) {
 	};
 
 	hoister.hoist('NextModule', NextModule, 'SINGLETON');
+
+	return NextModule;
 });
 ```
 
