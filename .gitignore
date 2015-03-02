@@ -10,3 +10,4 @@ coverage/
 bower_componets/
 node_modules/
 !dist/*
+npm-debug.log
